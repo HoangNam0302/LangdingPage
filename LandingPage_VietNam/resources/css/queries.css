@@ -1,0 +1,66 @@
+/* Đây là thiết kế Responsive */
+/* Ý nghĩa của dòng lệnh:
+- Đây là cú pháp của media-queries 
+- phần trong () chỉ phù hợp với những màn hình giao diện <1000px  */
+
+/* Big tablet to 1200px */
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .heading-main-box {
+    transform: translate(-35%, -50%);
+  }
+  form {
+    margin-left: 30%;
+  }
+}
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width: 1023px) {
+  .heading-main-box .btn {
+    display: inline;
+    margin-left: 10px;
+  }
+  .about-section .about-picture {
+    margin-left: 20%;
+  }
+  .product-section .btn {
+    display: inline-block;
+    margin-left: 15%;
+    /* padding: auto; */
+    width: 70%;
+  }
+  h3 {
+    font-size: 100%;
+    letter-spacing: 1px;
+  }
+  .contract-section label {
+    font-size: 135%;
+  }
+  .contract-section .information li {
+    width: 130%;
+    font-size: 90%;
+  }
+  .social-icons li {
+    margin-left: 6%;
+  }
+}
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 135%;
+  }
+  h4 {
+    margin-left: 20%;
+  }
+  .heading-main-box .btn {
+    margin-left: -10%;
+  }
+  .product-section .btn{
+    padding: 5px 10px;
+    
+  }
+}
+/* Small phones from 0 to 480x */
+@media only screen and (max-width: 480px) {
+}

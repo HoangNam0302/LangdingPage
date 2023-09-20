@@ -1,0 +1,504 @@
+/* ----------------------------------------------------------------------------- */
+/* -----------------------------------DEFAULT SETUP---------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: #5a5a5a;
+  background-color: #ffffff;
+  /* text-rendering: hiển thị văn bản -- 
+    optimizeLegibility: tối ưu nhất */
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* -----------------------------------REUSABLE COMPONENT---------------------------------- */
+/* ----------------------------------------------------------------------------- */
+/* REUSABLE COMPONENT: thành phần tái sử dụng 
+Có thể sử dụng lại nhiều lần cho vào đây */
+
+.btn {
+  text-decoration: none;
+  color: white;
+  background-color: #e67e22;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 0 50px;
+  width: 190px;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #d35400;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+h1 {
+  /* font-size: 300%;
+      font-weight: 400; */
+
+  word-spacing: 5px;
+  color: red;
+  line-height: 150%;
+  margin: center;
+}
+
+h2 {
+  color: #e67e22;
+  font-size: 180%;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 3px;
+  background-color: rgba(230, 125, 34, 0.682);
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+h3 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #265077;
+  color: white;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.p-long {
+  text-align: center;
+  color: #265077;
+  font-size: 22px;
+  margin: 40px 0;
+  width: 90%;
+  margin-left: 5%;
+  line-height: 150%;
+}
+
+section {
+  padding: 50px;
+}
+
+.small-icon {
+  color: orange;
+  font-size: 130%;
+  margin-right: 10px;
+}
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------HEADER----------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+header {
+  background-size: cover;
+  background-image: linear-gradient(
+      to right top,
+      rgb(89, 61, 66, 0.5),
+      rgb(193, 193, 193, 0.5)
+    ),
+    url("../img/background3.jpg");
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.logo {
+  width: 200px;
+  float: left;
+  /* margin-left: 70px;
+    margin-top: 50px; */
+}
+
+.main-nav {
+  float: right;
+  /* Bỏ dấu chấm của thẻ <li> dùng list-style */
+  list-style: none;
+  margin-right: 50px;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: white;
+  font-size: 110%;
+  font-weight: 700;
+  /* transition tăng độ mượt */
+  transition: border-bottom 0.5s;
+  padding: 3px;
+}
+
+/* hover và active là giá trị của pseudo
+- hover: di chuột qua thì hiện gạch chân 
+- active: click vào mới hiện gạch chân */
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #cccccc;
+}
+
+.heading-main-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h4 {
+  color: yellow;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+/* ------------Sticky--------------------- */
+.sticky {
+  background-color: rgba(226, 139, 8, 0.838);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 84px;
+}
+
+.sticky .logo{
+  width: 150px;
+}
+
+.sticky .main-nav {
+  margin-top: 30px;
+}
+
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------ABOUT SECTION----------------------------------------- */
+/* ---------------------------------Chủ tịch Hồ chí Minh-------------------------------------------- */
+.about-picture {
+  position: relative;
+}
+
+.about-picture img {
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  border: 4px solid rgba(255, 255, 0, 0.492);
+  /* box-shadow: x y độ-mờ độ-rộng color */
+  box-shadow: 0px 5px 15px 5px red;
+  transition: all 2s;
+}
+
+.picture-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: red;
+  transform: translate(-65%, 350%);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.about-picture:hover img,
+.about-picture:active img {
+  /* blur: làm mờ --- brightness: độ sáng */
+  filter: brightness(55%) blur(2px);
+}
+
+.about-picture:hover .picture-title,
+.about-picture:active .picture-title {
+  transform: translate(-65%, -50%);
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------Product----------------------------------------- */
+/* ---------------------------------Tài liệu về Bác-------------------------------------------- */
+.product-section {
+  background-color: #f4f4f4;
+}
+
+.product-section h2 {
+  margin-bottom: 50px;
+}
+
+.product-box {
+  background-color: palegoldenrod;
+  box-shadow: 3px 5px 10px rgba(238, 232, 170, 0.455);
+  width: 90%;
+  height: 300px;
+}
+
+.product-price {
+  color: #265077;
+  font-size: 250%;
+  font-weight: 300;
+  text-align: center;
+}
+
+.product-price span {
+  font-size: 80%;
+}
+
+.product-box ul li {
+  margin-left: 20%;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.product-box .btn {
+  margin-left: 27%;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------Testimaonials Section---------------------------------------- */
+/* ---------------------------------Những câu nói để đời-------------------------------------------- */
+.testimaonials-section {
+  background-image: url("../img/covietnam2.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  background-attachment: fixed;
+}
+
+.testimaonials-section h2 {
+  margin-bottom: 70px;
+}
+
+.testimaonials-section blockquote {
+  margin-left: 35px;
+}
+
+blockquote {
+  font-style: italic;
+  line-height: 140%;
+  color: white;
+  position: relative;
+}
+
+blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 400%;
+  position: absolute;
+  top: -10px;
+  left: -15px;
+}
+
+cite {
+  display: block;
+  color: red;
+  margin-top: 25px;
+}
+
+cite img {
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid yellow;
+  vertical-align: bottom;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------Sponsor Section(Nhà tài trợ)---------------------------------------- */
+/* ---------------------------------Đại tướng của Việt Nam-------------------------------------------- */
+
+.sponsors-section {
+  background-image: url("../img/covietnam.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  background-attachment: fixed;
+}
+
+.sponsors-section h2 {
+  margin-bottom: 50px;
+}
+
+.sponsors-showcase {
+  margin-left: 15%;
+}
+
+.sponsors-showcase li {
+  list-style: none;
+  float: left;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo-sponsor {
+  width: 140px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.sponsors-showcase li .logo-sponsor:hover,
+.sponsors-showcase li .logo-sponsor:active {
+  transform: scale(1.2);
+}
+
+figcaption {
+  color: white;
+  font-weight: 900;
+  font-size: 120%;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------Contact form---------------------------------------- */
+/* ---------------------------------Liên hệ-------------------------------------------- */
+.contract-section {
+  background-image: url("../img/covietnam2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.information {
+  list-style: none;
+  color: whitesmoke;
+  line-height: 200%;
+  margin-top: 70px;
+  word-spacing: 1px;
+  font-size: 95%;
+}
+
+.information .small-icon {
+  color: red;
+}
+
+.information .small-icon:hover,
+.information .small-icon:active {
+  transform: scale(1.3);
+}
+
+.social-icons {
+  margin-top: 50px;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  font-size: 250%;
+  margin-left: 20px;
+  color: white;
+}
+
+.social-icons li i {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.social-icons li i:hover,
+.social-icons li i:active {
+  transition: scale(1.3);
+  color: orangered;
+}
+
+/* ------------------FORM------------------- */
+form {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 40%;
+  width: 60%;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+form .row{
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 150%;
+  color: white;
+}
+
+input,
+textarea {
+  outline: none;
+  padding: 10px;
+  background-color: rgba(48, 47, 47, 0.3);
+  border: 1px solid rgba(70, 68, 68, 0.7);
+  margin-left: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+textarea {
+  /* Bỏ kéo ở góc dưới bên phải của label phần ghi chú  */
+  resize: none;
+  height: 100px;
+}
+
+input{
+  height: 50px;
+
+}
+
+input[type=text], input[type=email], textarea{
+  width: 80%;
+  font-size: 100%;
+  transition: all 0.3s;
+}
+
+/* focus: là pseudo là hành động chỉ con chuột vào chuẩn bị đánh chữ */
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+color: white;
+background-color: rgba(48, 47, 47, 0.7) ;
+}
+
+form .row:last-child{
+  text-align: center;
+}
+
+input[type=submit]{
+  font-weight: 700;
+  font-size: 100%;
+  border-radius: 5px;
+  width: 60%;
+} 
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------Footer (chân trang)---------------------------------------- */
+/* ---------------------------------Bản quyền-------------------------------------------- */
+footer {
+  text-align: center;
+  background-color: #5a5a5a6d;
+  color: #d35400;
+  padding: 20px;
+}
